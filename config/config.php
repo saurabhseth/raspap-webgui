@@ -14,7 +14,7 @@ define('RASPI_LOG_SIZE_LIMIT', 64);
 
 // Constants for configuration file paths.
 // These are typical for default RPi installs. Modify if needed.
-define('RASPI_DNSMASQ_LEASES', '/var/lib/misc/dnsmasq.leases');
+define('RASPI_DNSMASQ_LEASES', '/var/lib/NetworkManager/dnsmasq-wlan0.leases');
 define('RASPI_DNSMASQ_PREFIX', '/etc/dnsmasq.d/090_');
 define('RASPI_ADBLOCK_LISTPATH', '/etc/raspap/adblock/');
 define('RASPI_ADBLOCK_CONFIG', RASPI_DNSMASQ_PREFIX.'adblock.conf');

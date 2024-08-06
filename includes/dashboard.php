@@ -193,7 +193,7 @@ function DisplayDashboard(&$extraFooterScripts)
         exec('iw dev ' . $apInterface . ' station dump | grep -oE ' . $MACPattern, $clients);
     } else {
         $moreLink = "dhcpd_conf";
-        exec('cat ' . RASPI_DNSMASQ_LEASES . '| grep -E $(iw dev ' . $apInterface . ' station dump | grep -oE ' . $MACPattern . ' | paste -sd "|")', $clients);
+        exec('sudo cat ' . RASPI_DNSMASQ_LEASES . '| grep -E $(iw dev ' . $apInterface . ' station dump | grep -oE ' . $MACPattern . ' | paste -sd "|")', $clients);
     }
     $ifaceStatus = $wlan0up ? "up" : "down";
 

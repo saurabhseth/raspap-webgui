@@ -7,7 +7,7 @@ def get_active_clients_amount(interface):
 
     if mac_addresses:
         grep_pattern = '|'.join(mac_addresses)
-        output = subprocess.run(['grep', '-iwE', grep_pattern, '/var/lib/misc/dnsmasq.leases'], capture_output=True, text=True)
+        output = subprocess.run(['sudo', 'grep', '-iwE', grep_pattern, '/var/lib/NetworkManager/dnsmasq-wlan0.leases'], capture_output=True, text=True)
         return len(output.stdout.splitlines())
     else:
         return 0
@@ -16,7 +16,7 @@ def get_active_clients(interface):
     arp_output = subprocess.run(['arp', '-i', interface], capture_output=True, text=True)
     arp_mac_addresses = set(line.split()[2] for line in arp_output.stdout.splitlines()[1:])
 
-    dnsmasq_output = subprocess.run(['cat', '/var/lib/misc/dnsmasq.leases'], capture_output=True, text=True)
+    dnsmasq_output = subprocess.run(['sudo', 'cat', '/var/lib/NetworkManager/dnsmasq-wlan0.leases'], capture_output=True, text=True)
     active_clients = []
 
     for line in dnsmasq_output.stdout.splitlines():

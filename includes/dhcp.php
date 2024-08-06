@@ -55,7 +55,7 @@ function DisplayDHCPConfig()
     $hosts = (array)$conf['dhcp-host'];
     $upstreamServers = (array)$conf['server'];
     exec("ip -o link show | awk -F': ' '{print $2}'", $interfaces);
-    exec('cat ' . RASPI_DNSMASQ_LEASES, $leases);
+    exec('sudo cat ' . RASPI_DNSMASQ_LEASES, $leases);
 
     count($log_dhcp) > 0 ? $conf['log-dhcp'] = true : false ;
     count($log_queries) > 0 ? $conf['log-queries'] = true : false ;

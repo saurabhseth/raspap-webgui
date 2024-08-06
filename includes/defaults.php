@@ -19,7 +19,7 @@ $defaults = [
 
   // Constants for configuration file paths.
   // These are typical for default RPi installs. Modify if needed.
-  'RASPI_DNSMASQ_LEASES' => '/var/lib/misc/dnsmasq.leases',
+  'RASPI_DNSMASQ_LEASES' => '/var/lib/NetworkManager/dnsmasq-wlan0.leases',
   'RASPI_DNSMASQ_PREFIX' => '/etc/dnsmasq.d/090_',
   'RASPI_ADBLOCK_LISTPATH' => '/etc/raspap/adblock/',
   'RASPI_ADBLOCK_CONFIG' =>  RASPI_DNSMASQ_PREFIX.'adblock.conf',
